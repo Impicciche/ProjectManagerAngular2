@@ -1,0 +1,9 @@
+.pageContent{
+    height: calc( 100vh - 56px );
+    width:100%;
+}
+.sideBar{
+    width: 20%;
+    background-color: #5a7c5d;
+    color: #ffffff;
+}

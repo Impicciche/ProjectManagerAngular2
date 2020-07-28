@@ -1,0 +1,29 @@
+<div class="formContainer">
+    <form action="" (submit)="login($event)">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="username">Username/Email</label>
+                <input type="text" id="username" placeholder="Username/Email" class="form-control" value="{{username}}">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="username">Password</label>
+                <input type="text" id="password" placeholder="password" class="form-control"  value="{{password}}">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="remember">Remember me.</label>
+                <input type="checkbox" name="remember" id="remember">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <input type="submit" name="login" id="login" value="Login" class="form-control">
+            </div>
+        </div>
+        
+
+    </form>
+</div>
