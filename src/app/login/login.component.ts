@@ -8,7 +8,7 @@ import { Login } from '../login';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username:string='';
+  username='';
   password='';
 
   constructor(private ls:LoginService) { }
