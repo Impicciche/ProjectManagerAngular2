@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     console.log("submit");
     $event.preventDefault();
     let login:Login = new Login();
-    login.username = this.username;
+    login.email = this.username;
     login.password = this.password;
 
     this.ls.login(login).subscribe((data)=>{console.log(data);});
