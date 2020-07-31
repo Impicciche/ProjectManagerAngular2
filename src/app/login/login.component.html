@@ -1,15 +1,15 @@
 <div class="formContainer">
-    <form action="" (submit)="login($event)">
+    <form action="" (submit)="login($event)" [formGroup]="loginAuth">
         <div class="form-row">
             <div class="form-group">
-                <label for="username">Username/Email</label>
-                <input type="text" id="username" placeholder="Username/Email" class="form-control" name="username"  [(ngModel)]="username">
+                <label for="email">Username/Email</label>
+                <input type="text" id="username" placeholder="Username/Email" class="form-control" name="email"  formControlName="email">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group">
-                <label for="username">Password</label>
-                <input type="password" id="password" placeholder="password" class="form-control"  name="password" [(ngModel)]="password">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="password" class="form-control"  name="password"  formControlName="password">
             </div>
         </div>
         <div class="form-row">
