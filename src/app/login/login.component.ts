@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from 'src/app/login.service';
-import { Login } from '../login';
+import { LoginService } from 'src/app/services/login.service';
+import { Login } from '../model/login';
 import { FormGroup, FormControl } from '@angular/forms';
+import { tokenName } from '@angular/compiler';
+import { Token } from '../model/token'; 
 
 @Component({
   selector: 'app-login',
@@ -26,7 +28,14 @@ export class LoginComponent implements OnInit {
 
     console.log(login);
 
-    this.ls.login(login).subscribe((data)=>{console.log(data);});
+    this.ls.login(login).subscribe((data)=>{
+      let token:Token = new Token();
+      token.token_access = data.token_access;
+      token.token_type = data.token_type;
+      token.expires_in = data.expires_in;
+      this.ls.setToken(token);
+
+      });
     return false;
   }
 }
