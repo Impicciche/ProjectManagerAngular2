@@ -30,10 +30,8 @@ export class LoginComponent implements OnInit {
 
     this.ls.login(login).subscribe((data)=>{
       let token:Token = new Token();
-      token.token_access = data.token_access;
-      token.token_type = data.token_type;
-      token.expires_in = data.expires_in;
-      this.ls.setToken(token);
+
+      this.ls.setToken(data);
 
       });
     return false;

@@ -15,7 +15,7 @@ export class LoggedGuardGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     console.log(this.ls.getToken());
-    if(!this.ls.getToken()){
+    if(this.ls.getToken() == undefined){
       return true;
     }
     return false;

@@ -8,8 +8,8 @@ import { LoggedGuardGuard } from './guards/logged-guard.guard';
 
 const routes: Routes = [
   {path: "login", component : LoginComponent, canActivate: [LoggedGuardGuard]},
-  {path: "register", component : RegisterComponent},
-  {path: "dashboard", component : DashboardComponent}
+  {path: "register", component : RegisterComponent, canActivate: [LoggedGuardGuard]},
+  {path: "dashboard", component : DashboardComponent, canActivate: [LoggedGuardGuard]}
 ];
 
 @NgModule({
