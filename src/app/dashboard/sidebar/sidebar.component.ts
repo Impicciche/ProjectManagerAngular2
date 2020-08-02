@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectService } from 'src/app/services/project.service';
+import { Project } from 'src/app/model/project';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-
-  constructor() { }
+  projects:Project[];
+  constructor(private ps:ProjectService) { }
 
   ngOnInit() {
+    this.ps.getAllProjects().subscribe((data:Project[]) => {
+      this.projects = data;
+      console.log(this.projects);
+    });
   }
 
 }

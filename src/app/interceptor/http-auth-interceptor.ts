@@ -9,7 +9,6 @@ export class HttpAuthInterceptor implements HttpInterceptor{
     constructor(private auth:LoginService, private router: Router){}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
-      console.log(this.auth.getToken());
 
       if(this.auth.getToken()){
         req = req.clone({setHeaders: {

@@ -4,12 +4,13 @@ import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import { LoggedGuardGuard } from './guards/logged-guard.guard';
+import { LimitAccessGuard } from './guards/limit-access-guard';
 
 
 const routes: Routes = [
   {path: "login", component : LoginComponent, canActivate: [LoggedGuardGuard]},
-  {path: "register", component : RegisterComponent, canActivate: [LoggedGuardGuard]},
-  {path: "dashboard", component : DashboardComponent, canActivate: [LoggedGuardGuard]}
+  {path: "register", component : RegisterComponent, canActivate: [LimitAccessGuard]},
+  {path: "dashboard", component : DashboardComponent, canActivate: [LimitAccessGuard]}
 ];
 
 @NgModule({

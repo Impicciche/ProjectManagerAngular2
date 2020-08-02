@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
     login.email = this.loginAuth.get('email').value;
     login.password = this.loginAuth.get('password').value;
 
-    console.log(login);
 
     this.ls.login(login).subscribe((data)=>{
       let token:Token = new Token();
