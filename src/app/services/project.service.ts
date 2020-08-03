@@ -7,7 +7,7 @@ import { Project } from '../model/project';
   providedIn: 'root'
 })
 export class ProjectService {
-  url_search_project="http://localhost:8000/api/project";
+  url_search_project="http://localhost:8000/api/project/search";
   url_all_projects="http://localhost:8000/api/project";
 
   constructor(private http:HttpClient) { 
@@ -17,5 +17,6 @@ export class ProjectService {
     return this.http.get(this.url_all_projects);
   }
   searchProject(project:string){
+    return this.http.post(this.url_search_project,{search: project});
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { LoginService } from '../services/login.service';
 
@@ -7,7 +7,7 @@ import { LoginService } from '../services/login.service';
   providedIn: 'root'
 })
 export class LimitAccessGuard implements CanActivate {
-  constructor(private ls:LoginService){
+  constructor(private ls:LoginService, private r:Router){
 
   }
 
@@ -15,6 +15,7 @@ export class LimitAccessGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if(this.ls.getToken() == undefined){
+      this.r.navigate(["/login"]);
       return false;
     }
     return true;

@@ -4,10 +4,10 @@
             <form class="d-flex align-items-center">
                 <label for="search">Search Project
 
-                    <input type="text" name="search" id="search" class="form-control" placeholder="Search...">
+                    <input type="text" [formControl]="searchSideBar" name="search" id="search" class="form-control" placeholder="Search...">
                 </label>
-                <span class="material-icons">search</span>
-                <span class="material-icons">add_circle_outline</span>
+                <a class="material-icons" (click)="searchProject()">search</a>
+                <a class="material-icons" routerLink="add-project">add_circle_outline</a>
             </form>
         </div>
     </div>

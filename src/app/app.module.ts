@@ -16,6 +16,7 @@ import { LoginService } from './services/login.service';
 import { ProjectService } from './services/project.service';
 
 import { HttpAuthInterceptor } from './interceptor/http-auth-interceptor';
+import { AddProjectComponent } from './dashboard/add-project/add-project.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpAuthInterceptor } from './interceptor/http-auth-interceptor';
     LoginComponent,
     RegisterComponent,
     SidebarComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddProjectComponent
   ],
   imports: [
     BrowserModule,
