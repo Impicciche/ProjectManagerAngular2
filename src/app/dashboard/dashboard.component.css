@@ -1,6 +1,5 @@
-.pageContent{
-    height: calc( 100vh - 56px );
-    width:100%;
+.content{
+    width:80%;
 }
 .sideBar{
     width: 20%;

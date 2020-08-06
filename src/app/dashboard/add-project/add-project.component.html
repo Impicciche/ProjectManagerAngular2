@@ -1,1 +1,46 @@
-<p>add-project works!</p>
+    <div class="container">
+        <form [formGroup]="addProject" (ngSubmit)="createProject()">
+            <h1>Create new Project</h1>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="title">Title</label>
+                    <input formControlName="title" class="form-control" type="text" name="title" id="title"></div>
+                </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="description">Description</label>
+                    <input formControlName="description" class="form-control" type="text" name="description" id="description"></div>
+                </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="status">
+                        Status
+                    </label>
+                    <select  class="form-control" name="status" id="status" formControlName="status">
+                        <option value="0">Finish</option>
+                        <option value="1">Pedding</option>
+                        <option value="2">In Progress</option>
+                    </select>
+                </div>
+            </div>
+            <a (click)="createClient()"><span class="material-icons" routerLink="add-project">add_circle_outline</span>Add client</a>
+            <div [formGroup]="client" (ngSubmit)="createClient()" *ngIf="newClient">
+                <h1>Create new Client</h1>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="title">Company Name</label>
+                        <input formControlName="company" class="form-control" type="text" name="company" id="company"></div>
+                    </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="description">TVA</label>
+                        <input formControlName="tva" class="form-control" type="text" name="tva" id="tva"></div>
+                    </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <input class="form-control" type="submit" name="createProject" id="createProject">
+                </div>
+            </div>
+        </form>
+    </div>
