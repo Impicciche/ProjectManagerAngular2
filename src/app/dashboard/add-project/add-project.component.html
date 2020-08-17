@@ -24,7 +24,7 @@
                 </div>
             </div>
             <a (click)="createClient()"><span class="material-icons" routerLink="add-project">add_circle_outline</span>Add client</a>
-            <div [formGroup]="client" (ngSubmit)="createClient()" *ngIf="newClient">
+            <div formGroupName="client" (ngSubmit)="createClient()" *ngIf="newClient"> 
                 <h1>Create new Client</h1>
                 <div class="form-row">
                     <div class="form-group col-md-12">

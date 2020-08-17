@@ -10,6 +10,6 @@ export class ClientService {
   constructor(private http: HttpClient) { }
 
   createClient(client:Client){
-    this.http.get(this.url_createClient);
+    return this.http.post(this.url_createClient,client);
   }
 }
